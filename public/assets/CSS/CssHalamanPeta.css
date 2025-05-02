@@ -1,0 +1,46 @@
+ .map-container {
+            background-color: #e5e5e5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .search-bar:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+        }
+        
+        .street-item {
+            transition: all 0.2s ease;
+        }
+        
+        .street-item:hover {
+            background-color: #e6f0fd;
+        }
+        
+        .map-controls button {
+            transition: all 0.2s ease;
+        }
+        
+        .map-controls button:hover {
+            background-color: #2563eb;
+        }
+        
+        .location-pin {
+            animation: bounce 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .street-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .street-tag:hover {
+            transform: translateY(-2px);
+        }

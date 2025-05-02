@@ -1,0 +1,188 @@
+<?php require 'layouts/header.php' ?>
+
+<!-- Main Content -->
+<main class="container mx-auto px-3 py-5">
+    <h1 class="text-4xl font-bold text-blue-600 mb-6">Peta Yogyakarta</h1>
+
+    <!-- Map Container -->
+    <div class="map-container bg-gray-200 rounded-lg shadow-md h-96 mb-6 flex items-center justify-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d54590.97701828059!2d110.38197326093207!3d-7.788802366745608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1745073970884!5m2!1sid!2sid" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <!-- Map Controls -->
+        <div class="absolute bottom-4 right-4 map-controls flex flex-col space-y-2">
+            <button class="bg-blue-500 text-white p-2 rounded-full shadow-lg">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+            </button>
+            <button class="bg-blue-500 text-white p-2 rounded-full shadow-lg">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                </svg>
+            </button>
+            <button class="bg-blue-500 text-white p-2 rounded-full shadow-lg">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="mb-6">
+        <div class="relative">
+            <input type="text" placeholder="Cari nama jalan" class="search-bar w-full md:w-72 h-12 px-4 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors">
+            <button class="absolute right-2 top-3 text-gray-500 hover:text-blue-500">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Street Listing Toggle -->
+    <div class="flex justify-end mb-4">
+        <div class="flex items-center space-x-2 bg-white py-2 px-4 rounded-lg shadow-md">
+            <span class="font-medium text-gray-700">List nama jalan satu arah</span>
+            <svg class="h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Street Detail -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+        <div class="p-6">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/3 mb-4 md:mb-0">
+                    <img src="/api/placeholder/400/300" alt="Jalan Ki Mangunsarkoro" class="rounded-lg shadow-md">
+                </div>
+                <div class="md:w-2/3 md:pl-6">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Jl. Ki Mangunsarkoro</h2>
+
+                    <div class="mb-4">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-3 py-1 rounded-full street-tag">Jalan Satu Arah</span>
+                        <span class="inline-block bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full street-tag">Kondisi Baik</span>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="text-lg font-semibold text-gray-700 mb-2">Alamat:</h3>
+                        <p class="text-gray-600">59XJ+C2G, Jl. Ki Mangunsarkoro, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
+                    </div>
+
+                    <a href="#" class="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4" />
+                        </svg>
+                        Lihat lokasi maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Street Listing -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="px-6 py-4 bg-blue-50 border-b border-blue-100">
+            <h2 class="text-xl font-bold text-blue-800">Daftar Jalan Satu Arah di Yogyakarta</h2>
+        </div>
+
+        <div class="divide-y divide-gray-200">
+            <div class="street-item p-4 hover:cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-800">Jl. Ki Mangunsarkoro</h3>
+                        <p class="text-sm text-gray-600">Baciro, Kec. Gondokusuman</p>
+                    </div>
+                    <div class="text-blue-600">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="street-item p-4 hover:cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-800">Jl. Jendral Sudirman</h3>
+                        <p class="text-sm text-gray-600">Kotabaru, Kec. Gondokusuman</p>
+                    </div>
+                    <div class="text-blue-600">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="street-item p-4 hover:cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-800">Jl. Malioboro</h3>
+                        <p class="text-sm text-gray-600">Sosromenduran, Kec. Gedong Tengen</p>
+                    </div>
+                    <div class="text-blue-600">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="street-item p-4 hover:cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-800">Jl. Kusumanegara</h3>
+                        <p class="text-sm text-gray-600">Umbulharjo, Kec. Umbulharjo</p>
+                    </div>
+                    <div class="text-blue-600">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="street-item p-4 hover:cursor-pointer">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-800">Jl. Taman Siswa</h3>
+                        <p class="text-sm text-gray-600">Wirogunan, Kec. Mergangsan</p>
+                    </div>
+                    <div class="text-blue-600">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="px-6 py-4 bg-gray-50 border-t border-gray-200 flex justify-between items-center">
+            <button class="flex items-center px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md disabled:opacity-50">
+                <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Sebelumnya
+            </button>
+
+            <div class="flex items-center space-x-2">
+                <span class="text-blue-600 bg-blue-100 px-3 py-1 rounded-md">1</span>
+                <span class="text-gray-700 hover:bg-gray-100 px-3 py-1 rounded-md cursor-pointer">2</span>
+                <span class="text-gray-700 hover:bg-gray-100 px-3 py-1 rounded-md cursor-pointer">3</span>
+                <span class="text-gray-500">...</span>
+                <span class="text-gray-700 hover:bg-gray-100 px-3 py-1 rounded-md cursor-pointer">10</span>
+            </div>
+
+            <button class="flex items-center px-4 py-2 text-sm text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50">
+                Selanjutnya
+                <svg class="h-4 w-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</main>
+<?php require 'layouts/footer.php' ?>

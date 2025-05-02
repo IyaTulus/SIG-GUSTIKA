@@ -1,0 +1,116 @@
+/* style.css */
+
+/* CSS Kustom Anda dipindahkan dari tag <style> di HTML */
+
+/* Hero section - Hapus background image lama */
+/* height bisa diatur pakai Tailwind (min-h-screen, h-screen, h-?) atau CSS di sini */
+.hero-section {
+    /* Hapus properti background image/gradient yang lama */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') no-repeat center center; */
+    /* background-size: cover; */
+    
+    /* Tinggi section sekarang bisa dikontrol oleh Tailwind min-h-screen atau h-screen */
+    /* Atau bisa juga di sini: */
+    /* height: 70vh; */ 
+    
+    /* Pastikan position dan overflow diatur (bisa di sini atau pakai Tailwind di HTML) */
+    position: relative; 
+    overflow: hidden;
+}
+
+/* Tambahkan Pseudo-element untuk overlay gelap di atas video */
+.hero-section::before {
+    content: ''; /* Diperlukan untuk pseudo-element */
+    position: absolute; /* Posisikan secara absolut */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); /* Gradient gelap */
+    z-index: 1; /* Posisikan di atas video (z-0) */
+}
+
+/* Feature card hover effect */
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Map marker pulse animation */
+.map-marker {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*
+   Anda bisa menambahkan CSS kustom lain di sini.
+   Misalnya, styling untuk menu mobile jika Anda mengimplementasikannya dengan JavaScript
+*/
+
+/* Contoh styling untuk menu mobile (jika diaktifkan oleh JS) */
+/*
+#nav-links {
+    display: none; // Default disembunyikan di mobile (sudah ada hidden md:flex di html)
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%; // Tepat di bawah navbar
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#nav-links.active {
+    display: flex; // Tampilkan saat class 'active' ditambahkan oleh JS
+}
+
+#nav-links a {
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #eee; // Opsional
+}
+
+#nav-links a:last-child {
+     border-bottom: none;
+}
+*/
+
+.image-container {
+  width: 100%; /* Reduced from 100% */
+  max-width: 500px; /* Reduced from 800px */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: 16/9;
+  margin-bottom: 40px;
+}
