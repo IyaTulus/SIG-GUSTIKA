@@ -5,7 +5,7 @@
                 <div>
                     <div class="flex items-center mb-4">
                          <!-- Logo SVG Footer -->
-                        <img src="../Logo/LogoPutih.png" alt="LogoPutih" class="h-10 w-7">
+                        <img src="../public/assets/Logo/LogoPutih.png" alt="LogoPutih" class="h-10 w-7">
                         <span class="ml-2 text-2xl font-bold">GeoArah</span>
                     </div>
                     <p class="text-gray-400">Arah Jalan yang Jelas, Perjalanan Tanpa Salah Arah.</p>

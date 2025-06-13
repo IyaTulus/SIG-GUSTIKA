@@ -2,12 +2,72 @@
 
 <!-- Main Content -->
 <main class="container mx-auto px-3 py-5">
-    <h1 class="text-4xl font-bold text-blue-600 mb-6">Peta Yogyakarta</h1>
+    <h1 style="margin-top: 5rem;" class="text-4xl font-bold text-blue-600 mb-6">Peta Yogyakarta</h1>
 
     <!-- Map Container -->
-    <div class="map-container bg-gray-200 rounded-lg shadow-md h-96 mb-6 flex items-center justify-center">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d54590.97701828059!2d110.38197326093207!3d-7.788802366745608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1745073970884!5m2!1sid!2sid" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div style="margin-top: 10rem;" class="map-container bg-gray-200 rounded-lg shadow-md h-96 mb-6 flex items-center justify-center">
+        <div style="height: 40rem;"
+            class="relative w-full h-96 md:h-[750px] lg:h-[900px] bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+            <!-- Map Background Pattern -->
 
+
+            <!-- Main Map Area -->
+            <div id="map" class="absolute inset-4 bg-white rounded-xl shadow-lg border-2 border-gray-100 z-0">
+                <!-- Map will be initialized here -->
+            </div>
+
+            <!-- Map Controls -->
+            <div class="absolute top-6 right-6 flex flex-col space-y-3 z-20">
+                <button
+                    class="bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 border border-gray-200">
+                    <svg class="h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                </button>
+                <button
+                    class="bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-200 border border-gray-200">
+                    <svg class="h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Location Indicator -->
+            <div class="absolute bottom-20 md:bottom-6 left-6 px-4 py-2 z-20">
+                <!-- Legend -->
+                <div
+                    class="bottom-20 md:bottom-6 my-2 right-6 bg-white p-4 rounded-lg shadow-lg border border-gray-200 z-20">
+                    <h4 class="text-sm font-semibold text-gray-800 mb-2">Legenda</h4>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-1 bg-green-500 rounded flex-shrink-0"></div>
+                            <span class="text-gray-600 whitespace-nowrap">Jalan Dua Arah</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-1 bg-red-500 rounded flex-shrink-0"></div>
+                            <span class="text-gray-600 whitespace-nowrap">Jalan Satu Arah</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-1 bg-yellow-500 rounded flex-shrink-0"></div>
+                            <span class="text-gray-600 whitespace-nowrap">Jalan Utama</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bottom-20 md:bottom-6 left-6 bg-white px-4 py-2 rounded-full shadow-lg border border-gray-200 z-20">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium text-gray-700">Yogyakarta, Indonesia</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
         <!-- Map Controls -->
         <div class="absolute bottom-4 right-4 map-controls flex flex-col space-y-2">
             <button class="bg-blue-500 text-white p-2 rounded-full shadow-lg">
@@ -29,7 +89,7 @@
     </div>
 
     <!-- Search Bar -->
-    <div class="mb-6">
+    <div class="mb-6" style="margin-top: 10rem;">
         <div class="relative">
             <input type="text" placeholder="Cari nama jalan" class="search-bar w-full md:w-72 h-12 px-4 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors">
             <button class="absolute right-2 top-3 text-gray-500 hover:text-blue-500">
