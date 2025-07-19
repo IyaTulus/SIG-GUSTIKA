@@ -16,7 +16,7 @@ const routes = {
   "": "../src/views/home.html",
   "#home": "../src/views/home.html",
   "#map": "../src/views/halamanPeta.html",
-  "#about": "../src/views/about.html"
+  "#about": "../src/views/about.html",
 };
 
 // Fungsi untuk load konten berdasarkan hash
@@ -24,14 +24,23 @@ async function loadPage() {
   const hash = window.location.hash;
   const page = routes[hash] || "../src/views/home.html"; // Default ke home
   await includeHTML("main-content", page);
-}
 
+  // Reload halaman setelah load konten
+  setTimeout(() => {
+    window.location.reload();
+  }, 100); // Delay singkat untuk memastikan konten sudah dimuat
+}
 
 // Inisialisasi halaman
 window.addEventListener("DOMContentLoaded", async () => {
   await includeHTML("header-placeholder", "../src/components/header.html");
   await includeHTML("footer-placeholder", "../src/components/footer.html");
-  loadPage();
+
+  // Hanya load page tanpa reload pada inisialisasi awal
+  const hash = window.location.hash;
+  const page = routes[hash] || "../src/views/home.html";
+  await includeHTML("main-content", page);
 });
 
+// Event listener untuk perubahan hash (navigasi)
 window.addEventListener("hashchange", loadPage);
